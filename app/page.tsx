@@ -1,6 +1,13 @@
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+export const metadata: Metadata = {
+  title: "IMDb Clone | Home",
+  description: "A clone of the IMDb website.",
+  icons: {
+    icon: { url: "/imdbicon.png", type: "image/png" },
+    shortcut: { url: "/imdbicon.png", type: "image/png" },
+  },
+};
 
 export default function Home() {
   return <main></main>;
