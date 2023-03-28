@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "IMDb Clone | Home",
   description: "A clone of the IMDb website.",
   icons: {
-    icon: { url: "/imdbicon.png", type: "image/png" },
-    shortcut: { url: "/imdbicon.png", type: "image/png" },
+    icon: { url: "next.svg", type: "image/svg" },
+    shortcut: { url: "next.svg", type: "image/svg" },
   },
 };
 
