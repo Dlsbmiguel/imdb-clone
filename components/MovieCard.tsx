@@ -15,7 +15,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           src={`https://image.tmdb.org/t/p/original/${
             movie.backdrop_path || movie.poster_path
           }`}
-          alt="Movie Poster"
+          alt="Movie poster"
           width={500}
           height={300}
           className="sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200"
@@ -25,7 +25,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
         <div className="">
           <p className="line-clamp-2">{movie.overview}</p>
           <h2 className="truncate font-bold">{movie.title || movie.name}</h2>
-          <p className="flex">
+          <p className="flex items-center">
             {movie.release_date || movie.first_air_date}
             <span>
               <FiThumbsUp className="h-5 ml-3 mr-1" />
