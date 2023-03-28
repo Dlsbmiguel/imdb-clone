@@ -19,3 +19,12 @@ export const getMovies = async (genre: string | string[]) => {
   const data = await res.json();
   return data;
 };
+
+export const getMoviesBySearchTerm = async (query: string) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&language=en-US&include_adult=false`
+  );
+
+  const data = await res.json();
+  return data;
+};

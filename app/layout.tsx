@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import Navbar from "@/components/Navbar";
+import SeachBox from "@/components/SeachBox";
 
 export default function RootLayout({
   children,
@@ -14,6 +15,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <Navbar />
+          <SeachBox />
           {children}
         </Providers>
       </body>

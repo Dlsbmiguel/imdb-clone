@@ -23,8 +23,8 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           blurDataURL="/spinner.svg"
         />
         <div className="">
-          <p className="line-clamp-2">{movie.overview}</p>
           <h2 className="truncate font-bold">{movie.title || movie.name}</h2>
+          <p className="line-clamp-2">{movie.overview}</p>
           <p className="flex items-center">
             {movie.release_date || movie.first_air_date}
             <span>
