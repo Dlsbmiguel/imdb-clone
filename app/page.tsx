@@ -1,7 +1,7 @@
 import Results from "@/components/Results";
 import { getMovies } from "@/lib/tmdb-api-calls";
 import type { Metadata } from "next";
-//export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "IMDb Clone | Home",
   description: "A clone of the IMDb website.",
@@ -14,9 +14,10 @@ export const metadata: Metadata = {
 export default async function Home({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const genre = searchParams?.genre || "fetchTrending";
+  const params = await searchParams;
+  const genre = params?.genre || "fetchTrending";
   const res = await getMovies(genre);
 
   if (!res.results) {

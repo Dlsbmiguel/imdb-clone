@@ -1,17 +1,15 @@
 import MovieCard from "@/components/MovieCard";
 import Results from "@/components/Results";
 import { getMoviesBySearchTerm } from "@/lib/tmdb-api-calls";
-import { FC } from "react";
 
-interface pageProps {
-  params: {
+interface PageProps {
+  params: Promise<{
     searchTerm: string;
-  };
+  }>;
 }
 
-// @ts-expect-error Server Component
-const SearchPage: FC<pageProps> = async ({ params }) => {
-  const searchTerm = params.searchTerm;
+const SearchPage = async ({ params }: PageProps) => {
+  const { searchTerm } = await params;
 
   const res = await getMoviesBySearchTerm(searchTerm);
 
