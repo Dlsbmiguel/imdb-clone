@@ -1,17 +1,15 @@
 import { getMovie } from "@/lib/tmdb-api-calls";
 import Image from "next/image";
-import { FC } from "react";
 
-interface pageProps {
-  params: {
+interface PageProps {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-// @ts-expect-error Server Component
-const page: FC<pageProps> = async ({ params }) => {
-  const movieId = params.id;
-  const movie = await getMovie(movieId);
+const Page = async ({ params }: PageProps) => {
+  const { id } = await params;
+  const movie = await getMovie(id);
 
   return (
     <div className="w-full">
@@ -47,4 +45,4 @@ const page: FC<pageProps> = async ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
