@@ -18,7 +18,7 @@ const SeachBox: FC = ({}) => {
       <input
         type="text"
         placeholder="Search keywords..."
-        className="w-full h-14 rounded-sm placeholder-gray-500 outline-none bg-transparent flex-1"
+        className="w-full h-14 rounded-xs placeholder-gray-500 outline-hidden bg-transparent flex-1"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
